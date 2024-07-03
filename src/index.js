@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
-    background-color: #f5f5f5;
+    background-color: #F3FAF2;
     color: #333;
   }
 `;

@@ -12,7 +12,9 @@ const AppContainer = styled.div`
 `;
 
 const Header = styled.header`
-  background-color: #2c3e50;
+  background-color: #A7D489;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   padding: 1rem;
 `;
 
@@ -42,7 +44,7 @@ const MainContent = styled.main`
 `;
 
 const Footer = styled.footer`
-  background-color: #2c3e50;
+  background-color: #A7D489;
   color: white;
   text-align: center;
   padding: 1rem;

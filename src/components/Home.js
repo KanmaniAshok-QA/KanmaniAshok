@@ -43,7 +43,7 @@ const BentoBox = styled.div`
 `;
 
 const BentoItem = styled.div`
-  background-color: white;
+  background-color: #FFFFFF;
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
