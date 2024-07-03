@@ -152,8 +152,8 @@ function Home() {
       
       <h2>Download My CV</h2>
       <DownloadButton 
-        href="/Resume.pdf" 
-        download="Kanmani_Resume.pdf"
+        href="./Resume.pdf" 
+        download="Resume.pdf"
       >
         Download CV
       </DownloadButton>
