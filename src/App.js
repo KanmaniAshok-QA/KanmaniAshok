@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { HashRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { FaInstagram, FaLinkedin } from 'react-icons/fa';
 import Home from './components/Home';
 import Projects from './components/Projects';
 import About from './components/About';
@@ -46,10 +47,29 @@ const MainContent = styled.main`
 
 const Footer = styled.footer`
   background-color: #A7D489;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   color: white;
   text-align: center;
   padding: 1rem;
   margin-top: auto;
+`;
+
+const SocialLinks = styled.div`
+display: flex;
+justify-content: center;
+margin-top: 1rem;
+`;
+
+const SocialLink = styled.a`
+color: white;
+margin: 0 1rem;
+font-size: 1.5rem;
+color: ${({ color }) => color};
+
+&:hover {
+  color: #ccc;
+}
 `;
 
 const HamburgerButton = styled.button`
@@ -97,6 +117,14 @@ return (
         </MainContent>
         <Footer>
           <p>&copy; 2024 Kanmani Ashok</p>
+          <SocialLinks>
+            <SocialLink href="https://www.instagram.com/kanmaniashok/" target="_blank" rel="noopener noreferrer" color="#3b5998">
+              <FaInstagram />
+            </SocialLink>
+            <SocialLink href="https://www.linkedin.com/in/kanmaniashok/" target="_blank" rel="noopener noreferrer" color="#0077b5">
+              <FaLinkedin />
+            </SocialLink>
+          </SocialLinks>
         </Footer>
       </AppContainer>
     </Router>
