@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { HashRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Home from './components/Home';
@@ -25,6 +25,7 @@ const Nav = styled.nav`
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
+    display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
   }
 `;
 
@@ -51,15 +52,40 @@ const Footer = styled.footer`
   margin-top: auto;
 `;
 
+const HamburgerButton = styled.button`
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+`;
+
 function App() {
-  return (
+
+const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+const toggleMenu = () => {
+  setIsMenuOpen(!isMenuOpen);
+};
+
+
+return (
     <Router>
       <AppContainer>
-        <Header>
-          <Nav>
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/projects">Projects</NavLink>
-            <NavLink to="/about">About</NavLink>
+      <Header>
+          <HamburgerButton onClick={toggleMenu}>☰</HamburgerButton>
+          <Nav isOpen={isMenuOpen}>
+            <NavLink to="/" onClick={() => setIsMenuOpen(false)}>Home</NavLink>
+            <NavLink to="/projects" onClick={() => setIsMenuOpen(false)}>Projects</NavLink>
+            <NavLink to="/about" onClick={() => setIsMenuOpen(false)}>About</NavLink>
           </Nav>
         </Header>
         <MainContent>
@@ -70,7 +96,7 @@ function App() {
           </Routes>
         </MainContent>
         <Footer>
-          <p>&copy; 2024 Your Name. All rights reserved.</p>
+          <p>&copy; 2024 Kanmani Ashok</p>
         </Footer>
       </AppContainer>
     </Router>

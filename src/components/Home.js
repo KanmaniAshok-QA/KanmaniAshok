@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Download } from 'lucide-react';
 
 const HomeContainer = styled.div`
   text-align: center;
@@ -13,7 +14,7 @@ const HomeContainer = styled.div`
 `;
 
 const Title = styled.h1`
-  font-weight: 700;
+  font-weight: 300;
   color: #2c3e50;
   margin-bottom: 1rem;
   font-size: 2.5rem;
@@ -24,7 +25,7 @@ const Title = styled.h1`
 `;
 
 const Subtitle = styled.p`
-  font-weight: 500;
+  font-weight: 300;
   color: #34495e;
   margin-bottom: 2rem;
   font-size: 1.2rem;
@@ -48,7 +49,7 @@ const BentoItem = styled.div`
   padding: 1.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  flex: 1 1 300px;
+  flex: 1 1 100px;
   max-width: 100%;
 
   &:hover {
@@ -58,9 +59,10 @@ const BentoItem = styled.div`
 
   h3 {
     margin: 0 0 1rem 0;
+    text-align: left;
     font-size: 1.2rem;
     color: #2c3e50;
-    font-weight: 700;
+    font-weight: 500;
   }
 
   ul {
@@ -80,7 +82,8 @@ const BentoItem = styled.div`
 `;
 
 const DownloadButton = styled.a`
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   background-color: #4CAF50;
   color: white;
   padding: 10px 20px;
@@ -94,6 +97,10 @@ const DownloadButton = styled.a`
 
   &:hover {
     background-color: #45a049;
+  }
+
+  svg {
+    margin-right: 8px;
   }
 
   @media (max-width: 480px) {
@@ -150,11 +157,11 @@ function Home() {
       <Title>Welcome to My Portfolio</Title>
       <Subtitle>With 8 years of experience, I specialise in assuring software quality through functional, performance testing and automation. I have a solid track record in testing applications such as Saas, SAP products, Salesforce, APIs, web and mobile applications. Proficient in employing diverse testing methods and tools to pinpoint and address issues, I contribute to developing top-notch software solutions.</Subtitle>
       
-      <h2>Download My CV</h2>
       <DownloadButton 
         href="./public/Resume.pdf" 
         download="Resume.pdf"
       >
+        <Download size={20} />
         Download CV
       </DownloadButton>
 

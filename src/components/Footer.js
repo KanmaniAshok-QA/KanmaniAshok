@@ -14,7 +14,7 @@ const FooterContainer = styled.footer`
 function Footer() {
   return (
     <FooterContainer>
-      <p>&copy; 2024 Your Name. All rights reserved.</p>
+      <p>&copy; 2024 Kanmani Ashok</p>
     </FooterContainer>
   );
 }
