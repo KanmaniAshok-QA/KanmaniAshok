@@ -1,6 +1,11 @@
+// Home.js
+
 import React from 'react';
 import styled from 'styled-components';
 import { Download } from 'lucide-react';
+import HeroSection from './HeroSection';
+
+
 
 const HomeContainer = styled.div`
   text-align: center;
@@ -10,28 +15,6 @@ const HomeContainer = styled.div`
 
   @media (max-width: 768px) {
     padding: 1rem;
-  }
-`;
-
-const Title = styled.h1`
-  font-weight: 300;
-  color: #2c3e50;
-  margin-bottom: 1rem;
-  font-size: 2.5rem;
-
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
-`;
-
-const Subtitle = styled.p`
-  font-weight: 300;
-  color: #34495e;
-  margin-bottom: 2rem;
-  font-size: 1.2rem;
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
   }
 `;
 
@@ -90,7 +73,7 @@ const DownloadButton = styled.a`
   text-align: center;
   text-decoration: none;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 20px 2px 4px 2px;
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s;
@@ -108,7 +91,6 @@ const DownloadButton = styled.a`
     font-size: 14px;
   }
 `;
-
 
 function Home() {
   const skills = [
@@ -151,12 +133,11 @@ function Home() {
     }
   ];
 
+  
 
   return (
     <HomeContainer>
-      <Title>Welcome to My Portfolio</Title>
-      <Subtitle>With 8 years of experience, I specialise in assuring software quality through functional, performance testing and automation. I have a solid track record in testing applications such as Saas, SAP products, Salesforce, APIs, web and mobile applications. Proficient in employing diverse testing methods and tools to pinpoint and address issues, I contribute to developing top-notch software solutions.</Subtitle>
-      
+      <HeroSection />
       <DownloadButton 
         href="./public/Resume.pdf" 
         download="Resume.pdf"
@@ -177,7 +158,7 @@ function Home() {
             </ul>
           </BentoItem>
         ))}
-      </BentoBox>
+      </BentoBox> 
     </HomeContainer>
   );
 }

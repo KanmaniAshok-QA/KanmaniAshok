@@ -17,12 +17,16 @@ const Header = styled.header`
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center items vertically */
 `;
 
 const Nav = styled.nav`
   display: flex;
-  justify-content: center;
-  
+  justify-content: flex-end; /* Align items to the right */
+  flex: 1;
+
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
@@ -53,24 +57,27 @@ const Footer = styled.footer`
   text-align: center;
   padding: 1rem;
   margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center items vertically */
 `;
 
 const SocialLinks = styled.div`
-display: flex;
-justify-content: center;
-margin-top: 1rem;
+  display: flex;
+  margin-right: 1rem;
 `;
 
 const SocialLink = styled.a`
-color: white;
-margin: 0 1rem;
-font-size: 1.5rem;
-color: ${({ color }) => color};
+  color: white;
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  color: ${({ color }) => color};
 
-&:hover {
-  color: #ccc;
-}
+  &:hover {
+    color: #ccc;
+  }
 `;
+
 
 const HamburgerButton = styled.button`
   display: none;
@@ -82,25 +89,20 @@ const HamburgerButton = styled.button`
 
   @media (max-width: 768px) {
     display: block;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
   }
 `;
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-const toggleMenu = () => {
-  setIsMenuOpen(!isMenuOpen);
-};
-
-
-return (
+  return (
     <Router>
       <AppContainer>
-      <Header>
+        <Header>
           <HamburgerButton onClick={toggleMenu}>☰</HamburgerButton>
           <Nav isOpen={isMenuOpen}>
             <NavLink to="/" onClick={() => setIsMenuOpen(false)}>Home</NavLink>
@@ -116,12 +118,12 @@ return (
           </Routes>
         </MainContent>
         <Footer>
-          <p>&copy; 2024 Kanmani Ashok</p>
+          <div>&copy; 2024 Kanmani Ashok</div>
           <SocialLinks>
-            <SocialLink href="https://www.instagram.com/kanmaniashok/" target="_blank" rel="noopener noreferrer" color="#3b5998">
+            <SocialLink href="https://www.instagram.com/kanmaniashok/" target="_blank" rel="noopener noreferrer">
               <FaInstagram />
             </SocialLink>
-            <SocialLink href="https://www.linkedin.com/in/kanmaniashok/" target="_blank" rel="noopener noreferrer" color="#0077b5">
+            <SocialLink href="https://www.linkedin.com/in/kanmaniashok/" target="_blank" rel="noopener noreferrer">
               <FaLinkedin />
             </SocialLink>
           </SocialLinks>
